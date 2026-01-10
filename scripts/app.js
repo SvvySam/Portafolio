@@ -54,6 +54,7 @@ const translations = {
     phMessage: "Mensaje",
     btnSend: "Enviar Mensaje",
     footerRights: "Todos los derechos reservados.",
+    errEmailInvalid: "Por favor, introduce un correo electrónico válido sin espacios.",
   },
   en: {
     pageTitle: "Portfolio",
@@ -110,6 +111,7 @@ const translations = {
     phMessage: "Message",
     btnSend: "Send Message",
     footerRights: "All rights reserved.",
+    errEmailInvalid: "Please enter a valid email address without spaces.",
   },
   ja: {
     pageTitle: "ポートフォリオ",
@@ -159,6 +161,7 @@ const translations = {
     phMessage: "メッセージ",
     btnSend: "メッセージを送信",
     footerRights: "All rights reserved.",
+    errEmailInvalid: "スペースを含まない有効なメールアドレスを入力してください。",
   },
   zh: {
     pageTitle: "作品集",
@@ -210,6 +213,7 @@ const translations = {
     phMessage: "消息",
     btnSend: "发送消息",
     footerRights: "版权所有。",
+    errEmailInvalid: "请输入不带空格的有效电子邮件地址。",
   },
   fr: {
     pageTitle: "Portfolio",
@@ -266,6 +270,7 @@ const translations = {
     phMessage: "Message",
     btnSend: "Envoyer Message",
     footerRights: "Tous droits réservés.",
+    errEmailInvalid: "Veuillez saisir une adresse e-mail valide sans espaces.",
   },
   ar: {
     pageTitle: "محفظة الأعمال",
@@ -319,8 +324,11 @@ const translations = {
     phMessage: "الرسالة",
     btnSend: "إرسال الرسالة",
     footerRights: "جميع الحقوق محفوظة.",
+    errEmailInvalid: "يرجى إدخال عنوان بريد إلكتروني صالح بدون مسافات.",
   },
 };
+
+let typewriterInterval;
 
 document.addEventListener("DOMContentLoaded", () => {
   /* --- Functionality: Language Switcher --- */
@@ -359,51 +367,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* --- Typewriter Effect --- */
-  class Typewriter {
-    constructor(el, options) {
-      this.el = el;
-      this.text = el.innerText;
-      this.speed = options.speed || 100;
-      this.delay = options.delay || 0;
-      this.el.innerText = "";
-      setTimeout(() => this.type(), this.delay);
-    }
-
-    type() {
-      let i = 0;
-      const timer = setInterval(() => {
-        if (i < this.text.length) {
-          this.el.innerText += this.text.charAt(i);
-          i++;
-        } else {
-          clearInterval(timer);
-        }
-      }, this.speed);
-    }
-  }
-
-  const typewriterEl = document.getElementById("typewriter");
-  if (typewriterEl) {
-    const initTypewriter = () => {
-      const text = translations[localStorage.getItem("language") || "es"].heroTitle2 || "Proyectos";
-      typewriterEl.innerText = "";
-      let i = 0;
-      const speed = 100;
-      const timer = setInterval(() => {
-        if (i < text.length) {
-          typewriterEl.innerText += text.charAt(i);
-          i++;
-        } else {
-          clearInterval(timer);
-        }
-      }, speed);
-    };
-    
-    // Initial run
-    setTimeout(initTypewriter, 500);
-  }
-
   function setLanguage(lang) {
     // Update HTML dir attribute for RTL support
     if (lang === "ar") {
@@ -420,15 +383,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const key = el.getAttribute("data-i18n");
       // Special case for typewriter
       if (key === "heroTitle2" && el.id === "typewriter") {
+        clearInterval(typewriterInterval);
         el.innerText = "";
         let i = 0;
         const text = t[key];
-        const timer = setInterval(() => {
+        typewriterInterval = setInterval(() => {
           if (i < text.length) {
             el.innerText += text.charAt(i);
             i++;
           } else {
-            clearInterval(timer);
+            clearInterval(typewriterInterval);
           }
         }, 100);
       } else if (t[key]) {
@@ -614,6 +578,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      
+      const emailInput = contactForm.querySelector('input[name="email"]');
+      const emailValue = emailInput.value.trim();
+      const currentLang = localStorage.getItem("language") || "es";
+      const errorMsg = translations[currentLang].errEmailInvalid;
+
+      // Basic regex for email + no spaces check
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailValue) || emailValue.includes(" ")) {
+        alert(errorMsg);
+        emailInput.focus();
+        return;
+      }
+
       const btn = contactForm.querySelector("button");
       const originalText = btn.innerHTML;
       const formData = new FormData(contactForm);
