@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsl(0, 0%, 0%), hsla(0, 0%, 0%, 0.664)), url(../img/header5.jpg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.527), hsla(0, 0%, 0%, 0.664)), url(../img/header5.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color:#fff;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About us */
+
+main .raya{
+    padding: 30px 0 60px 0;
+}
+
+.contenedor-raya{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.raya .contenido-textos{
+    width: 100%;
+}
+
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+    background: #000000;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+    color: #000;
+    font-family:Verdana;
+}
+
+.galeria-raya1{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-raya1{
+    width: 50%;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-raya1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria-raya2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-raya2{
+    width: 50%;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-raya2 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria-raya3{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-raya3{
+    width: 50%;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-raya3 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+    }
+
+    .contenedor-raya{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .raya .contenido-textos{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* ABOUT US */
+
+    .raya .contenido-textos{
+        width: 95%;
+    }
+}

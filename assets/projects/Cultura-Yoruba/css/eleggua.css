@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #750606;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #350928;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(350, 87%, 33%, 0.527), hsla(288, 29%, 7%, 0.664)), url(../img/header2.jpg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(350, 87%, 33%, 0.527), hsla(288, 29%, 7%, 0.664)), url(../img/header2.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color:#fff;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About us */
+
+main .eleg-gua{
+    padding: 30px 0 60px 0;
+}
+
+.contenedor-eleggu-a{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.eleg-gua .contenido-textos{
+    width: 100%;
+}
+
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+    background: #750606;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+    color: #000;
+    font-family:Verdana;
+}
+
+
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+    }
+
+    .contenedor-eleggu-a{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eleg-gua .contenido-textos{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* ABOUT US */
+
+    .eleg-gua .contenido-textos{
+        width: 95%;
+    }
+}
