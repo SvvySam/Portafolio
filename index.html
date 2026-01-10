@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">
+      Portafolio
+    </title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="Icons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Icons/32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="Icons/48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Icons/96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Icons/192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Icons/180x180.png">
+
+    <meta
+      name="description"
+      content="Samuel | Desarrollador Web Independiente. Especializado en crear soluciones digitales modernas, eficientes y centradas en el usuario. Mira mi trayectoria y proyectos."
+    />
+    <meta name="keywords" content="Samuel Dev, Desarrollador Web, Portafolio, HTML, CSS, JavaScript, Freelance, Web Design">
+    <link rel="canonical" href="https://vuestrasitio.com/" />
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Desarrollador Web Full Stack | Portafolio"
+    />
+    <meta
+      property="og:description"
+      content="Explora mi trayectoria y proyectos como desarrollador web independiente."
+    />
+    <meta property="og:image" content="assets/og-image.jpg" />
+    <meta name="theme-color" content="#646cff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print" onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo">Samuel <span class="accent">Dev</span>.</a>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li>
+              <a href="#hero" class="nav-link" data-i18n="navHome">Inicio</a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-link" data-i18n="navProjects"
+                >Proyectos</a
+              >
+            </li>
+            <li>
+              <a href="#experience" class="nav-link" data-i18n="navExperience"
+                >Experiencia</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="nav-link btn-secondary"
+                data-i18n="navContact"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+
+          <div class="lang-selector">
+            <button class="lang-btn" id="langBtn" aria-expanded="false">
+              <span id="currentLang">ES</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="lang-dropdown">
+              <li data-lang="es">Español</li>
+              <li data-lang="en">English</li>
+              <li data-lang="ja">日本語</li>
+              <li data-lang="zh">中文</li>
+              <li data-lang="fr">Français</li>
+              <li data-lang="ar">العربية</li>
+            </ul>
+          </div>
+
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Cambiar tema"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="badge" data-i18n="heroBadge">
+              Disponible para trabajar
+            </div>
+            <h1 class="hero-title">
+              <span data-i18n="heroTitle1">Trayectoria &</span> <br />
+              <span class="gradient-text" data-i18n="heroTitle2" id="typewriter"
+                >Proyectos</span
+              >.
+            </h1>
+            <p class="hero-description" data-i18n="heroDesc">
+              Desarrollador Web independiente enfocado en crear experiencias digitales funcionales y eficientes, combinando aprendizaje continuo con resultados sólidos.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="#projects"
+                class="btn btn-primary"
+                data-i18n="heroBtnWork"
+                >Ver Mi Trabajo</a
+              >
+              <a href="assets/cv-example.pdf" class="btn btn-outline" download
+                ><i class="fas fa-download"></i>
+                <span data-i18n="heroBtnCV">Descargar CV</span></a
+              >
+            </div>
+
+            <!-- Stats Counter -->
+            <div class="stats-row">
+              <div class="stat-item">
+                <span class="stat-number" data-target="1">0</span
+                ><span class="stat-plus"></span>
+                <span class="stat-label" data-i18n="statExp">Año de Exp.</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="4">0</span
+                ><span class="stat-plus">+</span>
+                <span class="stat-label" data-i18n="statTech"
+                  >Tecnologías</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span
+                ><span class="stat-plus">%</span>
+                <span class="stat-label" data-i18n="statSatisfaction"
+                  >Dedicación</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- 3D Abstract Representation (CSS only) -->
+          <div class="hero-visual">
+            <div class="sphere-wrapper">
+              <div class="sphere"></div>
+              <div class="orbit orbit-1"></div>
+              <div class="orbit orbit-2"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="projectsTitle">
+              Portafolio Selecto
+            </h2>
+            <p class="section-subtitle" data-i18n="projectsSubtitle">
+              Soluciones reales para problemas complejos.
+            </p>
+          </div>
+
+          <!-- Filters -->
+          <div class="project-filters">
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              data-i18n="filterAll"
+            >
+              Todos
+            </button>
+            <button class="filter-btn" data-filter="web" data-i18n="filterWeb">
+              Desarrollo Web
+            </button>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <!-- Project 1 Removed -->
+
+            <!-- Project: Cultura Yoruba -->
+            <article class="project-card" data-category="web">
+              <div class="project-image">
+                <i class="fas fa-book-open project-icon"></i>
+                <div class="overlay"></div>
+              </div>
+              <div class="project-content">
+                <span class="category-tag">Universitario</span>
+                <h3 class="project-title">Cultura Yoruba</h3>
+                <p class="project-description">
+                  Página de proyecto para una universidad basada en la religión Yoruba.
+                </p>
+                <div class="tech-stack">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="assets/projects/Cultura-Yoruba/index.html"
+                    class="btn-sm"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i>
+                    <span>Ver Proyecto</span></a
+                  >
+                </div>
+              </div>
+            </article>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Timeline -->
+      <section id="experience" class="section experience">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="expTitle">Trayectoria</h2>
+            <p class="section-subtitle" data-i18n="expSubtitle">
+              Mi camino profesional y académico.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2024 - Presente</div>
+              <div class="timeline-content">
+                <h3 data-i18n="job1Title">Desarrollador Web</h3>
+                <span class="company" data-i18n="compJob1">Proyectos Independientes</span>
+                <p data-i18n="job1Desc">
+                  Liderando el desarrollo de la nueva plataforma de clientes
+                  usando React y Next.js. Optimización de rendimiento y mentoría
+                  a juniors.
+                </p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023 - 2024</div>
+              <div class="timeline-content">
+                <h3 data-i18n="job2Title">Freelance Junior</h3>
+                <span class="company" data-i18n="compJob2">Exploración de Mercado</span>
+                <p data-i18n="job2Desc">
+                  Desarrollo de sitios web corporativos y landing pages de alta
+                  conversión. Implementación de animaciones complejas con GSAP.
+                </p>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2020 - 2023</div>
+              <div class="timeline-content">
+                <h3 data-i18n="job3Title">Estudiante Universitario</h3>
+                <span class="company" data-i18n="job3Comp">Independiente</span>
+                <p data-i18n="job3Desc">
+                  Creación de soluciones personalizadas para clientes
+                  internacionales. Desarrollo de plugins WordPress y APIs REST.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Removed -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact">
+        <div class="container contact-container">
+          <div class="contact-box">
+            <h2 class="section-title" data-i18n="contactTitle">Hablemos</h2>
+            <p class="contact-text" data-i18n="contactText">
+              ¿Tienes un proyecto en mente? Envíame un mensaje y lo haremos
+              realidad.
+            </p>
+
+            <form class="contact-form" id="contactForm" action="https://formspree.io/samuelmacumaa@gmail.com" method="POST">
+              <div class="form-group">
+                <input
+                  name="name"
+                  placeholder="Tu Nombre"
+                  required
+                  data-i18n-placeholder="phName"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  name="email"
+                  placeholder="Tu Email"
+                  required
+                  data-i18n-placeholder="phEmail"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Mensaje"
+                  rows="5"
+                  required
+                  data-i18n-placeholder="phMessage"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary full-width">
+                <span data-i18n="btnSend">Enviar Mensaje</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+
+            <div class="social-links mt-4">
+              <a href="https://www.linkedin.com/in/samuel-macuma-132147370/" target="_blank" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/SvvySam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <p>
+          &copy; 2026 Samuel.
+          <span data-i18n="footerRights">Todos los derechos reservados.</span>
+        </p>
+        <button
+          id="scrollToTop"
+          class="scroll-top-btn"
+          aria-label="Volver arriba"
+        >
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script src="scripts/app.js" defer></script>
+  </body>
+</html>

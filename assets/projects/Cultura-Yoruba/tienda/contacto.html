@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Tienda Cultura Yoruba</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/tab.png" type="image/x-icon">
+    <!-- Main Styles (Parent Directory) -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <!-- Shop Specific Styles -->
+    <link rel="stylesheet" href="assets/css/modern-shop.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">Cultura Yoruba</div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="index.html">Tienda</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html" class="active">Contacto</a>
+            <a href="carrito.html" class="nav-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/slide3.jpg');">
+        <h1>Contáctanos</h1>
+        <h2>Estamos aquí para responder tus dudas</h2>
+        
+        <div class="wave-container">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 80px; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #faf9f6;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container section">
+        
+        <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <form id="form-contacto" action="#" method="POST">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--terracotta);">Envíanos un Mensaje</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Nombre Completo</label>
+                    <input type="text" name="cliente" id="nombre" placeholder="Tu nombre" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Correo Electrónico</label>
+                    <input type="email" name="correo" id="correo" placeholder="tucorreo@ejemplo.com" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Teléfono / WhatsApp</label>
+                    <input type="tel" name="celular" id="celular" placeholder="+58..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Mensaje</label>
+                    <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; min-height: 150px;" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Cultura Yoruba</h4>
+                <p>Tienda oficial de productos religiosos y culturales.</p>
+                <br>
+                <p><b>RIF-J317322266</b></p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="../index.html">Volver al Sitio Principal</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Cultura Yoruba. Desarrollado por Samuel Macuma</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="assets/js/shop.js"></script>
+    
+    <!-- Simple Contact Form Logic (Simulation) -->
+    <script>
+        document.getElementById('form-contacto').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                icon: 'success',
+                title: 'Mensaje Enviado',
+                text: 'Gracias por contactarnos. Te responderemos a la brevedad.',
+                timer: 3000,
+                showConfirmButton: false
+            });
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

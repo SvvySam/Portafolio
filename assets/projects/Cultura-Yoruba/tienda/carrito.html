@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | Cultura Yoruba</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/tab.png" type="image/x-icon">
+    <!-- Main Styles (Parent Directory) -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <!-- Shop Specific Styles -->
+    <link rel="stylesheet" href="assets/css/modern-shop.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific enhancements for Checkout Form */
+        .cart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .cart-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .checkout-form {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .checkout-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-grey);
+        }
+
+        .checkout-form .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .cart-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .cart-table th, 
+        .cart-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-table th {
+            color: var(--terracotta);
+            font-family: var(--header-font);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">Cultura Yoruba</div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="index.html">Tienda</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="nav-cart-icon active">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/slide3.jpg');">
+        <h1>Tu Carrito</h1>
+        <h2>Finaliza tu compra de manera segura</h2>
+        
+        <div class="wave-container">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 80px; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #faf9f6;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container section">
+        
+        <div class="cart-container">
+            
+            <!-- Checkout Form & Cart Items -->
+            <div class="checkout-form">
+                <h3 style="margin-bottom: 1.5rem;">Detalles del Pedido</h3>
+                
+                <!-- This table will be populated by JS -->
+                <div id="carrito" class="contenido">
+                    <table class="cart-table" id="lista-compra">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cant.</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- JS will inject rows here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="text-align: right; margin-top: 1rem;">
+                     <p>Subtotal: <span id="subtotal" style="font-weight: bold;">0.00</span></p>
+                     <p>IVA: <span id="igv" style="font-weight: bold;">0.00</span></p>
+                     <p style="font-size: 1.5rem; color: var(--terracotta);">Total: <span id="total" style="font-weight: bold;">0.00</span></p>
+                </div>
+            </div>
+
+            <!-- Client Info Form -->
+            <form id="procesar-pago" action="reg.php" method="POST" class="checkout-form">
+                <h3 style="margin-bottom: 1.5rem;">Datos del Cliente</h3>
+                
+                <div class="form-group">
+                    <label for="cliente">Nombre Completo</label>
+                    <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección de Envío</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección exacta" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" name="numero" placeholder="+58..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Método de Pago</label>
+                    <select name="genero" class="form-control">
+                        <option value="Divisas">Divisas</option>
+                        <option value="Pagomovil">Pago Móvil</option>
+                    </select>
+                </div>
+
+                <div id="loaders" style="display: none; text-align: center;">
+                    <img id="cargando" src="assets/img/cargando.gif" width="50" alt="Cargando...">
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <a href="productos.html" class="btn btn-secondary" style="flex: 1; text-align: center;">Seguir Comprando</a>
+                    <input type="submit" class="btn btn-primary" id="procesar-compra" value="Confirmar Compra" style="flex: 1;">
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Cultura Yoruba</h4>
+                <p>Tienda oficial de productos religiosos y culturales.</p>
+                <br>
+                <p><b>RIF-J317322266</b></p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="../index.html">Volver al Sitio Principal</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Cultura Yoruba. Desarrollado por Samuel Macuma</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="assets/js/shop.js"></script>
+
+
+</body>
+</html>

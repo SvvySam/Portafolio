@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada | Samuel Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-dark);
+            overflow: hidden;
+        }
+        .error-container {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            line-height: 1;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            text-decoration: none;
+            display: inline-block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Oops! Parece que te has perdido.</h1>
+        <p style="color: var(--text-secondary); margin-bottom: 40px;">La página que buscas no existe o ha sido movida.</p>
+        <a href="index.html" class="btn btn-primary btn-home">
+            <i class="fas fa-home"></i> Volver al Inicio
+        </a>
+    </div>
+
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+</body>
+</html>

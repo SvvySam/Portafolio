@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Cultura Yoruba</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/tab.png" type="image/x-icon">
+    <!-- Main Styles (Parent Directory) -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <!-- Shop Specific Styles -->
+    <link rel="stylesheet" href="assets/css/modern-shop.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">Cultura Yoruba</div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="index.html">Tienda</a>
+            <a href="productos.html" class="active">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <!-- Dropdown Cart (Simplified for static modernization, actual logic requires JS) -->
+            <a href="carrito.html" class="nav-cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/slide2.jpg');">
+        <h1>Catálogo de Productos</h1>
+        <h2>Encuentra todo lo necesario para tu vida religiosa</h2>
+        
+        <div class="wave-container">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 80px; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #faf9f6;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container section">
+        
+        <!-- Filter/Category Tabs (Optional visual enhancement) -->
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <a href="#" class="btn btn-secondary">Todos</a>
+            <a href="#revistas" class="btn btn-secondary">Revistas</a>
+            <a href="#ropa" class="btn btn-secondary">Ropa</a>
+            <a href="#accesorios" class="btn btn-secondary">Accesorios</a>
+        </div>
+
+        <div class="product-grid" id="lista-productos">
+
+            <!-- Revista Octubre -->
+            <div class="product-card" id="revistas">
+                <div class="product-image-container">
+                    <img src="assets/img/octubre2020.jpg" alt="Revista Octubre 2020">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Revistas</div>
+                        <h3 class="product-title">Edición Octubre 2020</h3>
+                        <div class="product-price">Bs. 42</div>
+                        <p style="font-size: 0.8rem; color: #777;">SKU: ROP0000074</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="1">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Revista Nov-Dic -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/novidici2020.jpg" alt="Revista Nov-Dic">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Revistas</div>
+                        <h3 class="product-title">Edición Nov-Dic 2020</h3>
+                        <div class="product-price">Bs. 42</div>
+                        <p style="font-size: 0.8rem; color: #777;">SKU: JUG0000005</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="2">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Revista Enero -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/Enero2021.jpg" alt="Revista Enero">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Revistas</div>
+                        <h3 class="product-title">Edición Enero 2021</h3>
+                        <div class="product-price">Bs. 42</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: BPY4UND</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="3">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+             <!-- Revista Enero 2 -->
+             <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/Enero20212.jpg" alt="Revista Enero 2">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Revistas</div>
+                        <h3 class="product-title">Edición Enero Nº2 2021</h3>
+                        <div class="product-price">Bs. 42</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: DDMB7U70GR</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="4">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Camisa Hombre -->
+            <div class="product-card" id="ropa">
+                <div class="product-image-container">
+                    <img src="assets/img/Camisa Hombre 2.0.png" alt="Camisa Hombre">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Ropa</div>
+                        <h3 class="product-title">Camiseta para Hombre</h3>
+                        <div class="product-price">Bs. 218</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: HDB04</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="5">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Camisa Mujer -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/Camisa Mujer 2.0.png" alt="Camisa Mujer">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Ropa</div>
+                        <h3 class="product-title">Camiseta para Mujer</h3>
+                        <div class="product-price">Bs. 218</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: ROP0000023</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="6">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sweater -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/Sweater Unisex 2.0.png" alt="Sweater">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Ropa</div>
+                        <h3 class="product-title">Sweater Unisex</h3>
+                        <div class="product-price">Bs. 261</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: AP-D794-011</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="7">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Taza Shango -->
+            <div class="product-card" id="accesorios">
+                <div class="product-image-container">
+                    <img src="assets/img/tazashango.jpg" alt="Taza Shango">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Accesorios</div>
+                        <h3 class="product-title">Taza de Shangó</h3>
+                        <div class="product-price">Bs. 100</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: HTD-TSH023-1</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="8">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+             <!-- Taza Oshun -->
+             <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/img/tazaoshun.jpg" alt="Taza Oshun">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <div class="product-category">Accesorios</div>
+                        <h3 class="product-title">Taza de Oshún</h3>
+                        <div class="product-price">Bs. 100</div>
+                         <p style="font-size: 0.8rem; color: #777;">SKU: HPDMT</p>
+                    </div>
+                    <button class="btn-add-cart agregar-carrito" data-id="9">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Cultura Yoruba</h4>
+                <p>Tienda oficial de productos religiosos y culturales.</p>
+                <br>
+                <p><b>RIF-J317322266</b></p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="../index.html">Volver al Sitio Principal</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Cultura Yoruba. Desarrollado por Samuel Macuma</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="assets/js/shop.js"></script>
+
+
+</body>
+</html>

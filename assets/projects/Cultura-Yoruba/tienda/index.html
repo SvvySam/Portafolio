@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda oficial de Cultura Yoruba. Productos religiosos, ropa, y accesorios.">
+    <title>Tienda | Cultura Yoruba</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/tab.png" type="image/x-icon">
+    <!-- Main Styles (Parent Directory) -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <!-- Shop Specific Styles -->
+    <link rel="stylesheet" href="assets/css/modern-shop.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">Cultura Yoruba</div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="index.html" class="active">Tienda</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="nav-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="shop-hero" style="background-image: url('assets/img/slide1.jpg');">
+        <div class="shop-hero-content fade-in">
+            <h1>Tienda Yoruba</h1>
+            <p>Descubre nuestra colección exclusiva de artículos religiosos, ropa y accesorios.</p>
+            <a href="productos.html" class="btn btn-primary">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <main class="container section">
+        
+        <!-- Featured Categories -->
+        <h2 class="section-title">Categorías Destacadas</h2>
+        <div class="shop-categories fade-in">
+            <a href="productos.html#revistas" class="category-card">
+                <img src="assets/img/revistas.png" alt="Revistas">
+                <div class="category-overlay">
+                    <h3>Revistas</h3>
+                </div>
+            </a>
+            <a href="productos.html#ropa" class="category-card">
+                <img src="assets/img/ropa.webp" alt="Ropa">
+                <div class="category-overlay">
+                    <h3>Ropa</h3>
+                </div>
+            </a>
+            <a href="productos.html#accesorios" class="category-card">
+                <img src="assets/img/tazas.jpg" alt="Accesorios">
+                <div class="category-overlay">
+                    <h3>Accesorios</h3>
+                </div>
+            </a>
+        </div>
+
+        <!-- Featured Products Preview -->
+        <div style="margin-top: 5rem; text-align: center;">
+            <h2 class="section-title">Novedades</h2>
+            <p style="margin-bottom: 3rem;">Lo más nuevo para tu vida espiritual.</p>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="assets/img/tazas.jpg" alt="Taza Elegua">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <div class="product-category">Accesorios</div>
+                            <h3 class="product-title">Taza Ceremonial</h3>
+                            <div class="product-price">$15.00</div>
+                        </div>
+                        <button class="btn-add-cart">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="assets/img/revistas.png" alt="Revista">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <div class="product-category">Lectura</div>
+                            <h3 class="product-title">Revista Orishas Ed. 1</h3>
+                            <div class="product-price">$5.00</div>
+                        </div>
+                        <button class="btn-add-cart">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+
+                 <!-- Product 3 -->
+                 <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="assets/img/ropa.webp" alt="Camiseta">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <div class="product-category">Ropa</div>
+                            <h3 class="product-title">Camiseta Iyawó</h3>
+                            <div class="product-price">$25.00</div>
+                        </div>
+                        <button class="btn-add-cart">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <a href="productos.html" class="btn btn-secondary" style="margin-top: 2rem;">Ver todos los productos</a>
+        </div>
+
+    </main>
+
+    <!-- Short About Section -->
+    <section class="section" style="background-color: var(--light-bg);">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div>
+                <h2 class="section-title" style="text-align: left;">Calidad y Tradición</h2>
+                <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+                    En Cultura Yoruba nuestro equipo trabaja constantemente con energía y entusiasmo para seleccionar los mejores artículos. Nos encanta lo que hacemos y eso se refleja no solo en nuestros productos, sino también en la forma en que construimos relaciones de confianza con nuestra comunidad.
+                </p>
+            </div>
+            <div>
+                <img src="assets/img/index.jpg" alt="Cultura Yoruba Team" style="width: 100%; border-radius: var(--radius); box-shadow: var(--shadow);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Cultura Yoruba</h4>
+                <p>Tienda oficial de productos religiosos y culturales.</p>
+                <br>
+                <p><b>RIF-J317322266</b></p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="../index.html">Volver al Sitio Principal</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Cultura Yoruba. Desarrollado por Samuel Macuma</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+</html>
