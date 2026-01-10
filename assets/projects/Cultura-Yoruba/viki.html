@@ -8,6 +8,7 @@
     <meta name="description" content="Información sobre la Corte Vikinga en el espiritismo.">
     <title>Corte Vikinga | Cultura Yoruba</title>
     <link rel="shortcut icon" href="tienda/assets/img/tab.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/modern.css">
 </head>
 
@@ -16,10 +17,21 @@
     <nav id="navbar">
         <div class="logo">Cultura Yoruba</div>
         <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="index.html#about">Nosotros</a>
-            <a href="index.html#articles">Artículos</a>
-            <a href="tienda/index.html">Tienda</a>
+          <a href="index.html">Inicio</a>
+          <a href="index.html#about">Nosotros</a>
+          <a href="index.html#schedule">Programación</a>
+          <a href="index.html#articles">Artículos</a>
+          <a href="index.html#team">Equipo</a>
+          <a href="index.html#services">Servicios</a>
+          <a href="https://fmcaliente.com/" target="_blank">Radio</a>
+          <a href="tienda/index.html">Tienda</a>
+          <a href="tienda/carrito.html" class="nav-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
         </div>
     </nav>
 
@@ -97,16 +109,8 @@
         </div>
     </footer>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

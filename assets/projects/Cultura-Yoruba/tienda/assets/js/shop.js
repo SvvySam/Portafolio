@@ -196,19 +196,8 @@ class ShoppingCart {
     }
 }
 
-// Sticky Navbar Logic
-document.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-});
-
 // Instantiate
 document.addEventListener('DOMContentLoaded', () => {
     const shop = new ShoppingCart();
+    window.cartSystem = shop; 
 });
