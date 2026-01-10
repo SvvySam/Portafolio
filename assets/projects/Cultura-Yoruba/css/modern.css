@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
 
 :root {
-    /* Colors */
+    /* Colors - Light Theme (Default) */
     --primary-color: #A03C3C; /* Terracotta deep red */
     --primary-dark: #7a2b2b;
     --accent-color: #D4AF37; /* Gold */
@@ -14,6 +14,14 @@
     --bg-dark: #121212;
     --glass-bg: rgba(255, 255, 255, 0.95);
     
+    /* Dynamic Theme Variables */
+    --theme-bg: var(--bg-light);
+    --theme-card: var(--bg-white);
+    --theme-text: var(--text-dark);
+    --theme-text-muted: var(--text-grey);
+    --theme-glass: var(--glass-bg);
+    --theme-border: rgba(0,0,0,0.05);
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -30,6 +38,28 @@
     --transition: all 0.3s ease;
 }
 
+[data-theme="dark"] {
+    --theme-bg: #121212;
+    --theme-card: #1e1e1e;
+    --theme-text: #f5f5f5;
+    --theme-text-muted: #b0b0b0;
+    --theme-glass: rgba(18, 18, 18, 0.95);
+    --theme-border: rgba(255,255,255,0.1);
+    --bg-light: #121212;
+    --bg-white: #1e1e1e;
+}
+
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .category-card {
+    background: var(--theme-card) !important;
+    color: var(--theme-text) !important;
+}
+
+[data-theme="dark"] .product-title,
+[data-theme="dark"] .product-price {
+    color: var(--theme-text) !important;
+}
+
 /* Reset & Base */
 * {
     margin: 0;
@@ -43,10 +73,11 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: var(--theme-text);
+    background-color: var(--theme-bg);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -109,6 +140,22 @@ ul {
     margin-bottom: var(--spacing-sm);
     position: relative;
     display: inline-block;
+    color: var(--text-dark); /* Reset to dark for sections with white background */
+}
+
+/* Specific white color for titles over background images/headers */
+.hero-content h1,
+.hero-content h2,
+.page-header h1,
+.page-header h2,
+.gallery-overlay h4,
+.shop-hero h1,
+.shop-hero p {
+    color: var(--text-light) !important;
+}
+
+.article-content h3 {
+    color: var(--primary-color) !important; /* Ensure article internal titles stay visible */
 }
 
 .section-title::after {
@@ -281,7 +328,7 @@ nav.scrolled .nav-links a:hover { color: var(--primary-color); }
 
 /* Programming / Schedule */
 .schedule-section {
-    background-color: var(--bg-white);
+    background-color: var(--theme-card);
 }
 
 .schedule-grid {
@@ -291,7 +338,7 @@ nav.scrolled .nav-links a:hover { color: var(--primary-color); }
 }
 
 .schedule-card {
-    background: var(--bg-light);
+    background: var(--theme-bg);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
@@ -371,10 +418,16 @@ nav.scrolled .nav-links a:hover { color: var(--primary-color); }
 }
 
 .gallery-overlay h4 {
-    color: var(--text-light);
+    color: var(--text-light) !important;
     font-size: 1.5rem;
     transform: translateY(20px);
     transition: 0.4s ease;
+}
+
+.gallery-overlay p {
+    color: var(--text-light) !important;
+    opacity: 0.9;
+    margin-top: 0.5rem;
 }
 
 .gallery-item:hover .gallery-overlay h4 {
@@ -383,7 +436,7 @@ nav.scrolled .nav-links a:hover { color: var(--primary-color); }
 
 /* Team */
 .team-section {
-    background-color: var(--bg-white);
+    background-color: var(--theme-card);
 }
 
 .team-grid {
@@ -393,7 +446,7 @@ nav.scrolled .nav-links a:hover { color: var(--primary-color); }
 }
 
 .team-card {
-    background: var(--bg-light);
+    background: var(--theme-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -545,7 +598,7 @@ footer {
 
 /* Article Content */
 .article-content {
-    background: var(--bg-white);
+    background: var(--theme-card);
     padding: 4rem;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
@@ -603,10 +656,53 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Responsive */
+/* Theme Toggle */
+.theme-toggle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: var(--transition);
+}
+
+nav.scrolled .theme-toggle {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] nav.scrolled .theme-toggle {
+    color: var(--text-light);
+}
+
+/* Hide theme toggle on mobile - will be inside menu */
+@media (max-width: 768px) {
+    .theme-toggle {
+        display: none;
+    }
+}
+
+/* Mobile Menu Base */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.8rem; /* Increased size */
+    color: var(--text-light);
+    cursor: pointer;
+    z-index: 2000; /* Higher z-index to stay above everything */
+    padding: 10px;
+}
+
+.mobile-menu-btn i.fa-times {
+    color: var(--text-dark); /* Ensure the X is visible against the white menu background */
+}
+
+nav.scrolled .mobile-menu-btn {
+    color: var(--primary-color);
+}
+
+/* Responsive Overrides */
 @media (max-width: 900px) {
     .services-grid, .about-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .about-img {
@@ -618,12 +714,52 @@ footer {
         font-size: 3rem;
     }
     
-    nav {
-        background: var(--glass-bg);
+    .mobile-menu-btn {
+        display: block;
     }
-    
-    nav .logo { color: var(--primary-color); }
-    nav .nav-links a { color: var(--text-dark); }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 100%; /* Take full width on mobile to avoid cutoff */
+        height: 100vh;
+        background: var(--theme-card); /* Use theme card color */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        z-index: 1500;
+        gap: 2.5rem;
+        padding: 2rem; /* Add padding */
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        color: var(--theme-text) !important; /* Ensure readable text */
+        font-size: 1.3rem; /* Slightly larger for better touch */
+        width: 100%; /* Take full width of parent for centering */
+        text-align: center;
+    }
+
+    /* Theme toggle inside mobile menu */
+    .nav-links .theme-toggle-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.3rem;
+        color: var(--theme-text);
+        cursor: pointer;
+        padding: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -639,14 +775,37 @@ footer {
     .page-header h2 {
         font-size: 1.2rem;
     }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-    .nav-links {
-        display: none; /* Mobile menu to be implemented if needed */
-    }
-    
     .section-title {
         font-size: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

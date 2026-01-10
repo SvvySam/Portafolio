@@ -28,7 +28,7 @@
 .shop-hero-content {
     position: relative;
     z-index: 2;
-    color: var(--white);
+    color: var(--theme-text);
     max-width: 800px;
     padding: 2rem;
 }
@@ -59,7 +59,6 @@
     border-radius: var(--radius);
     overflow: hidden;
     aspect-ratio: 1/1;
-    group: relative;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -106,7 +105,7 @@
 }
 
 .product-card {
-    background: white;
+    background: var(--theme-card);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -161,7 +160,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--dark-grey);
+    color: var(--theme-text);
 }
 
 .product-price {
@@ -175,7 +174,7 @@
     width: 100%;
     padding: 0.8rem;
     background: var(--dark-grey);
-    color: var(--white);
+    color: var(--theme-text);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -193,7 +192,7 @@
 /* Cart Icon in Nav */
 .nav-cart-icon {
     position: relative;
-    color: var(--white);
+    color: var(--theme-text);
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
